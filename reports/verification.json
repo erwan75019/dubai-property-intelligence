@@ -1,0 +1,22 @@
+{
+  "verified_at": "2026-09-12T04:52:27.361774+00:00",
+  "pytest": "63 passed",
+  "compile_import_checks": "passed for src, app, tests; all src modules imported",
+  "notebook_execution": {
+    "02_data_cleaning": "passed",
+    "03_modeling": "passed",
+    "04_explainability": "passed; native SHAP additive reconstruction passed",
+    "01_data_exploration": "preserved; previously executed cells and notebook structure validated"
+  },
+  "app_smoke_tests": [
+    "default form produced finite AED estimate",
+    "unseen area and project produced finite estimate and warnings"
+  ],
+  "artifact_parity": "all 18,097 persisted predictions reproduced",
+  "raw_csv": "SHA-256 unchanged",
+  "style_tools": {
+    "ruff": "not installed; skipped",
+    "flake8": "not installed; skipped",
+    "black": "not installed; skipped"
+  }
+}

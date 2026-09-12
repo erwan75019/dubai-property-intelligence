@@ -1,0 +1,65 @@
+{
+  "global": {
+    "candidate": "catboost__per_sqm__tuned",
+    "model": "catboost",
+    "formulation": "per_sqm",
+    "stage": "tuned",
+    "parameters": {
+      "loss_function": "MAE",
+      "learning_rate": 0.04,
+      "l2_leaf_reg": 10,
+      "iterations": 650,
+      "depth": 8
+    },
+    "fit_seconds": 50.381918250001036,
+    "MAE": 259674.3997559575,
+    "RMSE": 1683496.1021154278,
+    "R2": 0.777276195414577
+  },
+  "specialists": {
+    "Flat": {
+      "candidate": "catboost__per_sqm__tuned",
+      "model": "catboost",
+      "formulation": "per_sqm",
+      "stage": "tuned",
+      "parameters": {
+        "loss_function": "MAE",
+        "learning_rate": 0.04,
+        "l2_leaf_reg": 10,
+        "iterations": 650,
+        "depth": 8
+      },
+      "fit_seconds": 10.050092000019504,
+      "MAE": 225637.9236341432,
+      "RMSE": 1637691.8991918785,
+      "R2": 0.7553497684338099,
+      "use_specialist": true
+    },
+    "Villa": {
+      "candidate": "catboost__per_sqm__tuned",
+      "model": "catboost",
+      "formulation": "per_sqm",
+      "stage": "tuned",
+      "parameters": {
+        "loss_function": "MAE",
+        "learning_rate": 0.04,
+        "l2_leaf_reg": 10,
+        "iterations": 650,
+        "depth": 8
+      },
+      "fit_seconds": 2.799847582995426,
+      "MAE": 490740.2703595559,
+      "RMSE": 1247366.5439321299,
+      "R2": 0.8898142020959766,
+      "use_specialist": true
+    }
+  },
+  "use_routing": true,
+  "routing_validation_metrics": {
+    "MAE": 253369.12768001336,
+    "RMSE": 1663729.596623298,
+    "R2": 0.7824756441544005
+  },
+  "policy": "Validation MAE primary, RMSE tie-break; specialists need >=2% MAE improvement with <=10% RMSE deterioration; routed model must pass the same overall gate.",
+  "holdout_used_for_selection": false
+}

@@ -1,0 +1,26 @@
+{
+  "period": "Before 2026-07-09; residential subset before cleaning",
+  "rows": 76886,
+  "development_registration_rows": 1690,
+  "ratio_outside_half_to_two": 206,
+  "unit_price_below_100_AED": 1,
+  "unit_price_above_100000_AED": 40,
+  "commercial_room_labels": 1,
+  "diagnostic_only": "100 and 100000 AED/m\u00b2 are broad review thresholds, not validity judgments or filters.",
+  "input_features": [
+    "ACTUAL_AREA",
+    "INSTANCE_DATE",
+    "AREA_EN",
+    "PROP_SB_TYPE_EN",
+    "ROOMS_EN",
+    "IS_OFFPLAN_EN",
+    "IS_FREE_HOLD_EN",
+    "PROJECT_EN"
+  ],
+  "sale_procedures": [
+    "Delayed Sell",
+    "Sale",
+    "Sale On Payment Plan",
+    "Sell - Pre registration"
+  ]
+}

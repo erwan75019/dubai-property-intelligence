@@ -1,0 +1,8 @@
+model,formulation,target,split_strategy,rows,MAE,RMSE,R2
+V1 hist_gradient_boosting,global,direct,same chronological future holdout,18097,360390.6273270948,2816302.906787391,0.4299028191426112
+hist_gradient_boosting,global,direct,chronological future holdout,18097,368054.56571800646,2643654.6560126375,0.4976578607504707
+hist_gradient_boosting,global,log,chronological future holdout,18097,321747.52568453597,2635767.715137866,0.5006507121926169
+catboost,global,per_sqm,chronological future holdout,18097,305127.03246336605,2171196.478308209,0.6611648799482959
+catboost,Flat-only,per_sqm,"same future dates, segment subset",16998,248241.30110396713,1035303.151341279,0.8089392617760568
+catboost,Villa-only,per_sqm,"same future dates, segment subset",1075,751734.6904685347,6101899.013813407,0.4363296505447709
+segmented ensemble,routed,per_sqm,chronological future holdout,18097,294289.13023647264,2239690.8950433903,0.6394493062636188

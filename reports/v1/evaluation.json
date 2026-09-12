@@ -1,0 +1,39 @@
+{
+  "selected_model": "hist_gradient_boosting",
+  "selection_metric": "temporal validation MAE",
+  "test_metrics": {
+    "MAE": 360390.6273270948,
+    "RMSE": 2816302.906787391,
+    "R2": 0.4299028191426112
+  },
+  "rows": {
+    "early_train": 65205,
+    "validation": 14686,
+    "development": 79891,
+    "test": 18097
+  },
+  "date_ranges": {
+    "early_train": [
+      "2026-01-01 16:21:33",
+      "2026-06-11 23:59:54"
+    ],
+    "validation": [
+      "2026-06-12 00:04:05",
+      "2026-07-22 23:06:42"
+    ],
+    "development": [
+      "2026-01-01 16:21:33",
+      "2026-07-22 23:06:42"
+    ],
+    "test": [
+      "2026-07-23 00:37:09",
+      "2026-09-11 11:44:44"
+    ]
+  },
+  "versions": {
+    "python": "3.11.6",
+    "sklearn": "1.9.1",
+    "pandas": "3.0.5",
+    "numpy": "2.4.6"
+  }
+}

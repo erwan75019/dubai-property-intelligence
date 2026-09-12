@@ -1,0 +1,228 @@
+{
+  "project_version": "2.0.0",
+  "created_at": "2026-09-11T20:38:07.496808+00:00",
+  "selected_model": "segmented ensemble",
+  "target": "per_sqm",
+  "prediction_unit": "total price AED",
+  "selection": {
+    "global": {
+      "candidate": "catboost__per_sqm__tuned",
+      "model": "catboost",
+      "formulation": "per_sqm",
+      "stage": "tuned",
+      "parameters": {
+        "loss_function": "MAE",
+        "learning_rate": 0.04,
+        "l2_leaf_reg": 10,
+        "iterations": 650,
+        "depth": 8
+      },
+      "fit_seconds": 50.381918250001036,
+      "MAE": 259674.3997559575,
+      "RMSE": 1683496.1021154278,
+      "R2": 0.777276195414577
+    },
+    "specialists": {
+      "Flat": {
+        "candidate": "catboost__per_sqm__tuned",
+        "model": "catboost",
+        "formulation": "per_sqm",
+        "stage": "tuned",
+        "parameters": {
+          "loss_function": "MAE",
+          "learning_rate": 0.04,
+          "l2_leaf_reg": 10,
+          "iterations": 650,
+          "depth": 8
+        },
+        "fit_seconds": 10.050092000019504,
+        "MAE": 225637.9236341432,
+        "RMSE": 1637691.8991918785,
+        "R2": 0.7553497684338099,
+        "use_specialist": true
+      },
+      "Villa": {
+        "candidate": "catboost__per_sqm__tuned",
+        "model": "catboost",
+        "formulation": "per_sqm",
+        "stage": "tuned",
+        "parameters": {
+          "loss_function": "MAE",
+          "learning_rate": 0.04,
+          "l2_leaf_reg": 10,
+          "iterations": 650,
+          "depth": 8
+        },
+        "fit_seconds": 2.799847582995426,
+        "MAE": 490740.2703595559,
+        "RMSE": 1247366.5439321299,
+        "R2": 0.8898142020959766,
+        "use_specialist": true
+      }
+    },
+    "use_routing": true,
+    "routing_validation_metrics": {
+      "MAE": 253369.12768001336,
+      "RMSE": 1663729.596623298,
+      "R2": 0.7824756441544005
+    },
+    "policy": "Validation MAE primary, RMSE tie-break; specialists need >=2% MAE improvement with <=10% RMSE deterioration; routed model must pass the same overall gate.",
+    "holdout_used_for_selection": false
+  },
+  "features": [
+    "ACTUAL_AREA",
+    "INSTANCE_DATE",
+    "AREA_EN",
+    "PROP_SB_TYPE_EN",
+    "ROOMS_EN",
+    "IS_OFFPLAN_EN",
+    "IS_FREE_HOLD_EN",
+    "PROJECT_EN"
+  ],
+  "engineered_features": [
+    "LOG_AREA",
+    "YEAR",
+    "MONTH",
+    "QUARTER"
+  ],
+  "test_metrics": {
+    "MAE": 294289.13023647264,
+    "RMSE": 2239690.8950433903,
+    "R2": 0.6394493062636188
+  },
+  "interval": {
+    "alpha": 0.1,
+    "log_radius": 0.2464801846378908,
+    "n": 5222,
+    "method": "chronological split calibration, absolute log residual",
+    "caveat": "Nominal coverage is not guaranteed under temporal drift or subgroup shift."
+  },
+  "interval_test_coverage": 0.8827429960766978,
+  "median_interval_width_AED": 555763.7088068004,
+  "rows": {
+    "train": 65204,
+    "validation": 9464,
+    "calibration": 5222,
+    "test": 18097
+  },
+  "date_ranges": {
+    "train": [
+      "2026-01-01 16:21:33",
+      "2026-06-11 23:59:54"
+    ],
+    "validation": [
+      "2026-06-12 00:04:05",
+      "2026-07-08 23:38:24"
+    ],
+    "calibration": [
+      "2026-07-09 07:15:00",
+      "2026-07-22 23:06:42"
+    ],
+    "test": [
+      "2026-07-23 00:37:09",
+      "2026-09-11 11:44:44"
+    ],
+    "development": [
+      "2026-01-01 16:21:33",
+      "2026-07-08 23:38:24"
+    ]
+  },
+  "versions": {
+    "python": "3.11.6",
+    "sklearn": "1.9.1",
+    "pandas": "3.0.5",
+    "numpy": "2.4.6",
+    "catboost": "1.2.10"
+  },
+  "configuration": {
+    "raw_path": "/Users/erwanvangu/Desktop/dubai-property-intelligence/data/raw/transactions-2026-09-11.csv",
+    "cleaned_path": "/Users/erwanvangu/Desktop/dubai-property-intelligence/data/processed/residential_sales.csv",
+    "reports_path": "/Users/erwanvangu/Desktop/dubai-property-intelligence/reports",
+    "artifact_path": "/Users/erwanvangu/Desktop/dubai-property-intelligence/models/price_pipeline.joblib",
+    "validation_start": "2026-06-12",
+    "calibration_start": "2026-07-09",
+    "test_start": "2026-07-23",
+    "seed": 42,
+    "interval_alpha": 0.1,
+    "baseline_path": "/Users/erwanvangu/Desktop/dubai-property-intelligence/data/processed/v1_test_predictions.csv"
+  },
+  "external_validation_caveat": "The V1 holdout was previously inspected. V2 selection is frozen without its labels; a newer export is needed for an untouched external test.",
+  "v1_same_rows": {
+    "MAE": 360390.6273270948,
+    "RMSE": 2816302.906787391,
+    "R2": 0.4299028191426112
+  },
+  "improvement_pct": {
+    "MAE": 18.34162491429824,
+    "RMSE": 20.47407650485127
+  },
+  "paired_comparison": {
+    "MAE_reduction_AED": 66101.49709062214,
+    "day_bootstrap_95pct": [
+      48583.54033943056,
+      85732.43053381857
+    ],
+    "caveat": "Days may be dependent; this does not establish robustness in a new market regime."
+  },
+  "output_target": "TRANS_VALUE",
+  "prediction_floor_AED": 1.0,
+  "model_configuration": {
+    "global": {
+      "cat_features": [
+        "AREA_EN",
+        "PROP_SB_TYPE_EN",
+        "ROOMS_EN",
+        "IS_OFFPLAN_EN",
+        "IS_FREE_HOLD_EN",
+        "PROJECT_EN"
+      ],
+      "depth": 8,
+      "has_time": true,
+      "iterations": 650,
+      "l2_leaf_reg": 10,
+      "learning_rate": 0.04,
+      "loss_function": "MAE",
+      "random_seed": 42,
+      "thread_count": 2
+    },
+    "specialists": {
+      "Flat": {
+        "cat_features": [
+          "AREA_EN",
+          "PROP_SB_TYPE_EN",
+          "ROOMS_EN",
+          "IS_OFFPLAN_EN",
+          "IS_FREE_HOLD_EN",
+          "PROJECT_EN"
+        ],
+        "depth": 8,
+        "has_time": true,
+        "iterations": 650,
+        "l2_leaf_reg": 10,
+        "learning_rate": 0.04,
+        "loss_function": "MAE",
+        "random_seed": 42,
+        "thread_count": 2
+      },
+      "Villa": {
+        "cat_features": [
+          "AREA_EN",
+          "PROP_SB_TYPE_EN",
+          "ROOMS_EN",
+          "IS_OFFPLAN_EN",
+          "IS_FREE_HOLD_EN",
+          "PROJECT_EN"
+        ],
+        "depth": 8,
+        "has_time": true,
+        "iterations": 650,
+        "l2_leaf_reg": 10,
+        "learning_rate": 0.04,
+        "loss_function": "MAE",
+        "random_seed": 42,
+        "thread_count": 2
+      }
+    }
+  },
+  "processed_input_sha256": "bc351931c00a15f50636e19a0e783bd1e3a326d362ba4e07a5c9b40680d7191f"
+}
