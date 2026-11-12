@@ -226,3 +226,9 @@ The SHAP and comparison charts above were exported from the saved model and eval
 | `docs/pipeline-overview.png` | Pending: create the architecture diagram separately |
 
 For each pending image, save the real asset at the path above, uncomment its image reference and remove the corresponding pending notice.
+
+## License
+
+The project source code is available under the [MIT License](LICENSE).
+The Dubai Land Department data is not covered by this license and remains
+subject to the source's applicable terms and conditions.
